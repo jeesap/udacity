@@ -49,7 +49,7 @@ Resources:
     Properties: 
       Roles:
         - udacity-ec2-s3-ro
-WebAppLaunchConfig:
+  WebAppLaunchConfig:
     Type: AWS::AutoScaling::LaunchConfiguration
     Properties:
       UserData:
