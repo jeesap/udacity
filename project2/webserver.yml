@@ -181,6 +181,6 @@ Resources:
 Outputs: 
   LoadBalancerURL:
     Description: Generate Load Balancer's URL 
-    Value: !Join [ "", [ 'http://', !GetAtt LoadBalancer.DNSName ]]
+    Value: !Join [ "", [ 'http://', !GetAtt WebAppLB.DNSName ]]
     Export:
       Name: !Sub "${EnvironmentName}-Load-Balancer-URL"
