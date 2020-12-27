@@ -98,7 +98,6 @@ Resources:
       UserData:
         Fn::Base64: !Sub |
           #!/bin/bash
-          sudo su
           apt update -y 
           apt install apache2 -y 
           apt install awscli -y 
@@ -106,7 +105,6 @@ Resources:
           systemctl start apache2.service 
           systemctl enable apache2.service 
           cd /var/www/html 
-          rm -rf index.html 
           aws s3 cp s3://udacity-demo-1/udacity.zip .
           unzip -o udacity.zip
       ImageId: ami-005bdb005fb00e791
