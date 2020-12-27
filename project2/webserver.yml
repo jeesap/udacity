@@ -34,8 +34,8 @@ Resources:
           !Sub "${EnvironmentName}-VPCID"
       SecurityGroupIngress:
       - IpProtocol: tcp
-        FromPort: 8080
-        ToPort: 8080
+        FromPort: 80
+        ToPort: 80
         CidrIp: 0.0.0.0/0
       - IpProtocol: tcp
         FromPort: 22
@@ -77,8 +77,8 @@ Resources:
               - "s3:Get*" 
               - "s3:List*"
             Resource:
-              - arn:aws:s3:::udacity-demo-1
-              - arn:aws:s3:::udacity-demo-1/*
+              - arn:aws:s3:::udacitywebproject
+              - arn:aws:s3:::udacitywebproject/*
       Roles: 
         - 
           Ref: "UdacityS3ReadOnlyEC2"
@@ -107,7 +107,7 @@ Resources:
           systemctl enable apache2.service 
           cd /var/www/html 
           rm -rf index.html 
-          aws s3 cp s3://udacity-demo-1/udacity.zip .
+          aws s3 cp s3://udacitywebproject/udacity.zip .
           unzip -o udacity.zip
       ImageId: ami-005bdb005fb00e791
       IamInstanceProfile: !Ref ProfileWithRolesForOurApp
@@ -173,7 +173,7 @@ Resources:
       HealthCheckProtocol: HTTP
       HealthCheckTimeoutSeconds: 8
       HealthyThresholdCount: 2
-      Port: 8080
+      Port: 80
       Protocol: HTTP
       UnhealthyThresholdCount: 5
       VpcId: 
