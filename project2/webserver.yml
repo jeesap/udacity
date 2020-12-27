@@ -44,6 +44,11 @@ Resources:
         FromPort: 0
         ToPort: 65535
         CidrIp: 0.0.0.0/0
+  ProfileWithRolesForOurApp:
+    Type: AWS::IAM::InstanceProfile
+    Properties: 
+      Roles:
+        - udacity-ec2-s3-ro
 WebAppLaunchConfig:
     Type: AWS::AutoScaling::LaunchConfiguration
     Properties:
