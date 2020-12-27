@@ -54,8 +54,8 @@ WebAppLaunchConfig:
     Properties:
       UserData:
         Fn::Base64: !Sub |
-         #!/bin/bash
-        apt-get update -y
+          #!/bin/bash
+          apt-get update -y
         apt-get install apache2 -y
         systemctl start apache2.service
         cd /var/www/html
