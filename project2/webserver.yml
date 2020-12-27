@@ -90,7 +90,7 @@ Resources:
       Path: "/"
       Roles: 
         - 
-          Ref: "UdacityS3ReadOnlyEC2
+          Ref: "UdacityS3ReadOnlyEC2"
   
   WebAppLaunchConfig:
     Type: AWS::AutoScaling::LaunchConfiguration
