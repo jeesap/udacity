@@ -77,8 +77,8 @@ Resources:
               - "s3:Get*" 
               - "s3:List*"
             Resource:
-              - arn:aws:s3:::udacitywebproject
-              - arn:aws:s3:::udacitywebproject/*
+              - arn:aws:s3:::udacity-demo-1
+              - arn:aws:s3:::udacity-demo-1/*
       Roles: 
         - 
           Ref: "UdacityS3ReadOnlyEC2"
