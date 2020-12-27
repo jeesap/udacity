@@ -133,4 +133,4 @@ Outputs:
     Description: DNS Name of the web application
     Value: !Join [ "", [ "http://", !GetAtt LoadBalancer.DNSName ] ]
     Export:
-      Name: !Sub "${ProjectName}-DNS-NAME"
+      Name: !Sub "${EnvironmentName}-DNS-NAME"
