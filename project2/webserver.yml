@@ -128,3 +128,9 @@ Resources:
       VpcId: 
         Fn::ImportValue:
           Fn::Sub: "${EnvironmentName}-VPCID"
+Outputs:
+  LoadBalancerDNSName:
+    Description: DNS Name of the web application
+    Value: !Join [ "", [ "http://", !GetAtt LoadBalancer.DNSName ] ]
+    Export:
+      Name: !Sub "${ProjectName}-DNS-NAME"
