@@ -55,14 +55,14 @@ Resources:
       UserData:
         Fn::Base64: !Sub |
           #!/bin/bash
-         apt-get update -y
-         apt-get install apache2 -y
-         systemctl start apache2.service
-         cd /var/www/html
-         echo "Udacity Web Server deployed by Jees Antony is Up and Running!" > index.html
-         echo "webserver.yml contains webserver setup details" >> index.html
-         echo "network.yml contains Network setup details" >> index.html
-         echo "Git Hub - https://github.com/jeesap/udacity/edit/main/project2" >> index.html 
+          apt-get update -y
+          apt-get install apache2 -y
+          systemctl start apache2.service
+          cd /var/www/html
+          echo "Udacity Web Server deployed by Jees Antony is Up and Running!" > index.html
+          echo "webserver.yml contains webserver setup details" >> index.html
+          echo "network.yml contains Network setup details" >> index.html
+          echo "Git Hub - https://github.com/jeesap/udacity/edit/main/project2" >> index.html 
       ImageId: ami-005bdb005fb00e791
       IamInstanceProfile: !Ref ProfileWithRolesForOurApp
       SecurityGroups:
